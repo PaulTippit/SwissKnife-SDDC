@@ -9,7 +9,9 @@
 #####################################
 Write-Host "--------------------------------------------------------------"
 Write-Host "Loading PowerCLI..."
-Add-PSSnapin VMware.VimAutomation.Core
+# Removed 061318 - Add-PSSnapin VMware.VimAutomation.Core
+# Replaced with Get-Module -Name VMware* -ListAvailable | Import-Module
+Get-Module -Name VMware* -ListAvailable | Import-Module
 Write-Host "Loading settings.conf..."
 #[xml]$ConfigFile = Get-Content settings.xml
 #$ESXHosts = $ConfigFile.Settings.IPs.ESX
